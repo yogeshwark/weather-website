@@ -3,7 +3,7 @@ const express = require('express')
 const hbs = require('hbs')
 
 const app = express()
-
+const port = process.env.PORT || 8080
 
 // Define path for express config
 const publicDirPath = path.join(__dirname, '../public')
@@ -45,6 +45,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(8080, () => {
-    console.log('Server is up on 8080!')
+app.listen(port, () => {
+    console.log('Server is up on' + port + '!')
 })
